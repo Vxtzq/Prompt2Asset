@@ -10,6 +10,7 @@ or
 
 # Usage
 For character or moveable object :
+
 ``./generate_character.sh "prompt" --rig``
 
 For background asset :
