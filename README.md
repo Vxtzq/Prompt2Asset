@@ -7,3 +7,14 @@ Full pipeline to generate a fully functionnal asset from a single prompt
 or 
 
 ``pip install -r requirements.txt``
+
+# Usage
+For character or moveable object :
+``./generate_character.sh "prompt" --rig``
+
+For background asset :
+
+``./generate_character.sh "prompt"``
+
+
+
