@@ -1,6 +1,11 @@
 # Prompt2Asset
 Full pipeline to generate a fully functionnal asset from a single prompt
 
+**Based on the following repositories : **
+Microsoft TRELLIS : https://github.com/microsoft/TRELLIS
+Dichotomous Image Segmentation (DIS) : https://github.com/xuebinqin/DIS
+UniRig : https://github.com/VAST-AI-Research/UniRig
+
 # Installation
 
 To keep existing version : 
