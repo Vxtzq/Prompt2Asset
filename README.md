@@ -9,9 +9,15 @@ or
 ``pip install -r requirements.txt``
 
 # Usage
-For character or moveable object :
 
-``./generate_character.sh "prompt" --rig``
+For riggable character :
+
+``./generate_character.sh --prompt "prompt" --negative_prompt "negative prompt" --rig --use_pose --pose_image "character_pose.png"``
+
+
+For generic riggable object :
+
+``./generate_character.sh --prompt "prompt" --negative_prompt "negative prompt" --rig``
 
 For background asset :
 
