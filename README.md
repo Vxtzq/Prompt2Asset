@@ -1,7 +1,7 @@
 # Prompt2Asset
 Full pipeline to generate a fully functionnal asset from a single prompt
 
-**Based on the following repositories : **
+**Based on the following repositories :**
 
 Microsoft TRELLIS : https://github.com/microsoft/TRELLIS
 
