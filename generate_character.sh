@@ -27,9 +27,9 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
     *)
-      # Assume it's the main prompt
-      PROMPT_ARG="$1"
-      shift
+      # Everything else is considered the prompt
+      PROMPT_ARG="$*"
+      break
       ;;
   esac
 done
@@ -82,5 +82,3 @@ if [[ "$RIG_ARG" == "--rig" ]]; then
   rm -rf mesh_output tmp
   cd ..
 fi
-
-
