@@ -1,5 +1,6 @@
-# Prompt2Asset
-**Full pipeline to generate a fully functionnal asset from a single prompt**
+<h1 align="center">Prompt2Asset</h1>
+<p align="center"><strong>Full pipeline to generate a fully functional asset from a single prompt</strong></p>
+
 ![Preview](preview.png)
 
 
