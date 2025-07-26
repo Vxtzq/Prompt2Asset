@@ -1,5 +1,5 @@
 # Prompt2Asset
-Full pipeline to generate a fully functionnal asset from a single prompt
+**Full pipeline to generate a fully functionnal asset from a single prompt**
 ![Preview](preview.png)
 
 
