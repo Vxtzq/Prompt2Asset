@@ -52,3 +52,6 @@ For background asset:
 
 ./generate_character.sh "prompt"
 
+# TODO
+Use better 3d gen model like Hi3DGen or Hunyuan 3D 2.5
+
