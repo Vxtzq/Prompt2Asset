@@ -2,6 +2,9 @@
 Full pipeline to generate a fully functionnal asset from a single prompt
 
 # Installation
+
+To keep existing version : 
+
 ``pip install --no-deps --no-index --find-links=. --no-warn-script-location --no-cache-dir --ignore-installed -r requirements.txt``
 
 or 
