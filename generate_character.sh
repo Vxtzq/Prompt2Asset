@@ -6,6 +6,7 @@ PROMPT_ARG=""
 POSE_ARG=""
 NEG_PROMPT_ARG=""
 USE_POSE_ARG=""
+BASE_IMAGE_ARG=""
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -26,6 +27,10 @@ while [[ $# -gt 0 ]]; do
       USE_POSE_ARG="--use_pose"
       shift
       ;;
+    --base_image)
+      BASE_IMAGE_ARG="$2"
+      shift 2
+      ;;
     *)
       # Everything else is considered the prompt
       PROMPT_ARG="$*"
@@ -40,32 +45,43 @@ mkdir -p sprite
 mkdir -p sprite_output
 mkdir -p mesh_output
 
-# Run character generation
-CMD="python3 character_gen.py"
-
-if [[ -n "$POSE_ARG" ]]; then
-  if [[ ! -f "$POSE_ARG" ]]; then
-    echo "Error: pose image '$POSE_ARG' not found."
-    echo "Please provide a valid path using --pose_image <path>."
+# Use base image if provided
+if [[ -n "$BASE_IMAGE_ARG" ]]; then
+  if [[ ! -f "$BASE_IMAGE_ARG" ]]; then
+    echo "Error: base image '$BASE_IMAGE_ARG' not found."
     exit 1
   fi
-  CMD+=" --pose_image \"$POSE_ARG\""
-fi
 
-if [[ -n "$USE_POSE_ARG" ]]; then
-  CMD+=" $USE_POSE_ARG"
-fi
+  echo "Using base image: $BASE_IMAGE_ARG"
+  cp "$BASE_IMAGE_ARG" sprite/sprite.png
+else
+  # Run character generation
+  CMD="python3 character_gen.py"
 
-if [[ -n "$PROMPT_ARG" ]]; then
-  CMD+=" --prompt \"$PROMPT_ARG\""
-fi
+  if [[ -n "$POSE_ARG" ]]; then
+    if [[ ! -f "$POSE_ARG" ]]; then
+      echo "Error: pose image '$POSE_ARG' not found."
+      echo "Please provide a valid path using --pose_image <path>."
+      exit 1
+    fi
+    CMD+=" --pose_image \"$POSE_ARG\""
+  fi
 
-if [[ -n "$NEG_PROMPT_ARG" ]]; then
-  CMD+=" --negative_prompt \"$NEG_PROMPT_ARG\""
-fi
+  if [[ -n "$USE_POSE_ARG" ]]; then
+    CMD+=" $USE_POSE_ARG"
+  fi
 
-# Evaluate and run character generation
-eval $CMD
+  if [[ -n "$PROMPT_ARG" ]]; then
+    CMD+=" --prompt \"$PROMPT_ARG\""
+  fi
+
+  if [[ -n "$NEG_PROMPT_ARG" ]]; then
+    CMD+=" --negative_prompt \"$NEG_PROMPT_ARG\""
+  fi
+
+  echo "Running character generation..."
+  eval $CMD
+fi
 
 # Continue pipeline
 python3 IS-Net/Inference.py
