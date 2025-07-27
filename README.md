@@ -28,12 +28,12 @@
 
 To keep existing version:
 
-pip install --no-deps --no-index --find-links=. --no-warn-script-location --no-cache-dir --ignore-installed -r requirements.txt
+``pip install --no-deps --no-index --find-links=. --no-warn-script-location --no-cache-dir --ignore-installed -r requirements.txt``
 
 
 or
 
-pip install -r requirements.txt
+``pip install -r requirements.txt``
 
 
 # Usage
