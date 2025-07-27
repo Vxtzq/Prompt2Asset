@@ -61,7 +61,7 @@ def main():
 
         # Load SDXL base model with ControlNet
         pipe = StableDiffusionXLControlNetPipeline.from_pretrained(
-            "stabilityai/stable-diffusion-xl-base-1.0",
+            "lykon/dreamshaper-xl-1-0",
             controlnet=controlnet,
             torch_dtype=torch.float16,
             variant="fp16",
@@ -91,7 +91,7 @@ def main():
     else:
         # Load standard SDXL pipeline (no ControlNet)
         pipe = StableDiffusionXLPipeline.from_pretrained(
-            "stabilityai/stable-diffusion-xl-base-1.0",
+            "lykon/dreamshaper-xl-1-0",
             torch_dtype=torch.float16,
             variant="fp16",
             use_safetensors=True,
