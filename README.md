@@ -47,6 +47,12 @@ For generic riggable object:
 
 ./generate_character.sh --prompt "prompt" --negative_prompt "negative prompt" --rig
 
+Or from image : 
+
+./generate_character.sh --rig --base_image sample.jpg
+
+
+
 
 For background asset:
 
