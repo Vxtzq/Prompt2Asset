@@ -49,7 +49,7 @@ For generic riggable object:
 
 Or from image : 
 
-``./generate_character.sh --rig --base_image sample.jpg``
+``./generate_character.sh --rig --base_image sample.jpg`` (Image must be non transparent)
 
 
 
